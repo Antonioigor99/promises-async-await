@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundo Pet</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside>
+      <img src="./img/Logo.svg" alt="Logo da Mundo Pet" />
+      <nav>
+        <ul class="link-lista">
+          <li>
+            <a href="#" class="link-publicar">Publicar</a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/feed.svg" alt="" />
+              Feed
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/account_circle.svg" alt="" />
+              Perfil
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/info.svg" alt="" />
+              Sobre Nós
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/logout.svg" alt="" />
+              Sair
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <section class="upload-img">
+        <div class="img-container">
+          <img
+            class="imagem-conteudo"
+            src="./img/226459b09f002d63eec87c8bad7223ae480bbccf.jpg"
+            alt=""
+          />
+        </div>
+        <div class="carregar-img">
+          <button id="upload-btn">Carregar Imagem</button>
+          <input
+            type="file"
+            name="imagem-upload"
+            id="imagem-upload"
+            accept="image/"
+            style="display: none"
+          />
+        </div>
+        <div class="img-descricao">
+          <p>Imagem_do_gato.png</p>
+          <img src="img/close.svg" alt="" />
+        </div>
+      </section>
+      <section class="descricao-container">
+        <h2>Nova Foto</h2>
+        <form class="inputs-container">
+          <div>
+            <label for="name">Titulo da foto</label>
+            <input type="text" name="titulo-da-foto" />
+          </div>
+          <div>
+            <label for="descricao">Descrição</label>
+            <textarea name="descricao" id="input-descricao"></textarea>
+          </div>
+          <div>
+            <label for="tags">Hashtags</label>
+            <input type="text" name="tags" id="input-tags" />
+            <ul class="tags-resultado" id="lista-tags"></ul>
+          </div>
+        </form>
+        <div class="botoes-inputs-container">
+          <button class="botao-descartar">Descartar</button>
+          <button class="botao-publicar">Publicar</button>
+        </div>
+      </section>
+    </main>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
