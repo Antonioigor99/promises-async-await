@@ -45,7 +45,6 @@ const corDesejada = "amarelo";
 function filtrarGatos(arr, corDesejada) {
   return arr.filter((gato) => gato.cor === corDesejada);
 }
-console.log(filtrarGatos(listaDeGatos, corDesejada));
 
 const inputTags = document.getElementById("input-tags");
 const listaTags = document.getElementById("lista-tags");
@@ -87,4 +86,44 @@ inputTags.addEventListener("keypress", async (evento) => {
       }
     }
   }
+});
+
+async function publicar(inputTitle, inputDescricao, tags) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const aleatorio = Math.random() > 0.5;
+      if (aleatorio) {
+        resolve("Publicação salva com sucesso");
+      } else {
+        reject("Publicação não foi salva");
+      }
+    }, 1000);
+  });
+}
+
+const btnPublicar = document.getElementById("btn-publicar");
+btnPublicar.addEventListener("click", async (evento) => {
+  evento.preventDefault();
+  const inputTitle = document.getElementById("titulo-foto").value;
+  const inputDescription = document.getElementById("input-descricao").value;
+  const tags = Array.from(listaTags.querySelectorAll("p")).map(
+    (tag) => tag.textContent
+  );
+  try {
+    const publicaoEnviada = await publicar(inputTitle, inputDescription, tags);
+    console.log(publicaoEnviada);
+    alert("Publicação enviada");
+  } catch (error) {
+    console.error("Erro ao salvar publicação" + error);
+    alert("Erro ao salvar publicação");
+  }
+});
+const descartarBtn = document.querySelector(".botao-descartar");
+descartarBtn.addEventListener("click", (evento) => {
+  evento.preventDefault();
+  const formulario = document.querySelector("form");
+  formulario.reset();
+  conteudoImagem.src = "./img/226459b09f002d63eec87c8bad7223ae480bbccf.jpg";
+  imagemTextoConteudo.textContent = "Imagem_do_gato.png";
+  listaTags.innerHTML = "";
 });

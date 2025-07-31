@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: green;
+    border: 2px solid red;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    overflow-y: hidden;
+}
+.tags__section{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+#list__tags-container{
+    display: flex;
+    gap: 40px;
+}
+#list__tags-container li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: gray;
+    padding: 2px 15px;
+    border-radius: 5px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
